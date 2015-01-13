@@ -50,6 +50,7 @@
       <AdditionalIncludeDirectories>$(ProjectDir)..\third_party\gmock-1.7.0\gtest\include;$(ProjectDir)..\third_party\gmock-1.7.0\gtest;$(ProjectDir)..\third_party\gmock-1.7.0\include;$(ProjectDir)..\third_party\gmock-1.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4819</DisableSpecificWarnings>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
