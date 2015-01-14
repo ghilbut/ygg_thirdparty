@@ -15,17 +15,17 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\third_party\cpp-netlib-0.11.1-final\libs\network\src\client.cpp">
-      <Filter>network\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\third_party\cpp-netlib-0.11.1-final\libs\network\src\server_request_parsers_impl.cpp">
-      <Filter>network\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\third_party\cpp-netlib-0.11.1-final\libs\network\src\uri\schemes.cpp">
+    <ClCompile Include="..\third_party\cpp-netlib-0.10.1\libs\network\src\uri\schemes.cpp">
       <Filter>network\src\uri</Filter>
     </ClCompile>
-    <ClCompile Include="..\third_party\cpp-netlib-0.11.1-final\libs\network\src\uri\uri.cpp">
+    <ClCompile Include="..\third_party\cpp-netlib-0.10.1\libs\network\src\uri\uri.cpp">
       <Filter>network\src\uri</Filter>
+    </ClCompile>
+    <ClCompile Include="..\third_party\cpp-netlib-0.10.1\libs\network\src\client.cpp">
+      <Filter>network\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\third_party\cpp-netlib-0.10.1\libs\network\src\server_request_parsers_impl.cpp">
+      <Filter>network\src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

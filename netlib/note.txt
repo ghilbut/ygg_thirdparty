@@ -1,0 +1,15 @@
+
+cpp-netlib-0.10.1
+
+
+
+[2015-01-15]
+
+On cpp-netlib-0.11.1-final, there is string  "string iterators incompatible" assertion on runtime with vs2013.
+However, on cpp-netlib-0.10.1 has compile error in 'boost/network/protocol/http/algorithms/linearize.hpp' file on line 143.
+
+I decide use 0.10.1 and fix the source code below.
+- before: boost::optional<boost::uint16_t> port_ = port(request);
+- after: boost::optional<boost::uint16_t> port_ = static_cast<boost::optional<boost::uint16_t>>(port(request));
+
+It works fine.
