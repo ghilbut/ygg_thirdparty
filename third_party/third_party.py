@@ -80,7 +80,7 @@ gmock = {
 }
 
 jsoncpp = {
-  'url': 'https://github.com/open-source-parsers/jsoncpp/archive/1.0.0.tar.gz',
+  'url': 'https://github.com/open-source-parsers/jsoncpp/archive/1.4.4.tar.gz',
   'success': (lambda num, path: None),
   'failed':  (lambda num, path: failed(num, path))
 }
@@ -92,7 +92,7 @@ mongoose = {
 }
 
 v8 = {
-  'url': 'https://github.com/v8/v8-git-mirror/archive/3.31.47.tar.gz',
+  'url': 'https://github.com/v8/v8-git-mirror/archive/4.3.5.tar.gz',
   'success': (lambda num, path: None),
   'failed':  (lambda num, path: failed(num, path))
 }
@@ -105,10 +105,10 @@ cpp_netlib = {
 }
 
 threads = [
-  #ArchiveReadyThread(1, gmock),
-  #rchiveReadyThread(2, jsoncpp),
-  #ArchiveReadyThread(3, mongoose),
-  #ArchiveReadyThread(4, v8),
+  ArchiveReadyThread(1, gmock),
+  ArchiveReadyThread(2, jsoncpp),
+  ArchiveReadyThread(3, mongoose),
+  ArchiveReadyThread(4, v8),
   ArchiveReadyThread(5, cpp_netlib)
 ]
 

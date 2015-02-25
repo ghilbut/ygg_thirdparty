@@ -83,7 +83,7 @@ icu4c = {
 }
 
 python27 = {
-  'url': 'http://python.org/ftp/python/2.7.8/Python-2.7.8.tgz',
+  'url': 'http://python.org/ftp/python/2.7.9/Python-2.7.9.tgz',
   'success': (lambda num, path: None),
   'failed':  (lambda num, path: failed(num, path))
 }
@@ -115,5 +115,5 @@ if is_win:
   call(os.path.join(rootpath, 'boost_1_57_0.bat'), shell=True)
 
 
-#import shutil
-#shutil.rmtree(os.path.abspath(os.path.join(rootpath, 'tmp')))
+import shutil
+shutil.rmtree(os.path.abspath(os.path.join(rootpath, 'tmp')))

@@ -14,10 +14,10 @@ set BZIP2_SOURCE="%cd%\tmp\bzip2-1.0.6"
 7za x -o"%cd%\tmp" "%cd%\tmp\icu4c-54_1-src.tar"
 set ICU_PATH="%cd%\tmp\icu"
 
-: python 2.7.8
-7za x -o"%cd%\tmp" "%cd%\tmp\Python-2.7.8.tgz"
-7za x -o"%cd%\tmp" "%cd%\tmp\Python-2.7.8.tar"
-set PYTHON_ROOT="%cd%\tmp\Python-2.7.8"
+: python 2.7.9
+7za x -o"%cd%\tmp" "%cd%\tmp\Python-2.7.9.tgz"
+7za x -o"%cd%\tmp" "%cd%\tmp\Python-2.7.9.tar"
+set PYTHON_ROOT="%cd%\tmp\Python-2.7.9"
 set PYTHON_VERSION=2.7
 
 : zlib 1.2.8

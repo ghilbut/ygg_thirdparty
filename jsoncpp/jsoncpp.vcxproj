@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\third_party\jsoncpp-1.0.0\src\lib_json\json_reader.cpp" />
-    <ClCompile Include="..\third_party\jsoncpp-1.0.0\src\lib_json\json_value.cpp" />
-    <ClCompile Include="..\third_party\jsoncpp-1.0.0\src\lib_json\json_writer.cpp" />
+    <ClCompile Include="..\third_party\jsoncpp-1.4.4\src\lib_json\json_reader.cpp" />
+    <ClCompile Include="..\third_party\jsoncpp-1.4.4\src\lib_json\json_value.cpp" />
+    <ClCompile Include="..\third_party\jsoncpp-1.4.4\src\lib_json\json_writer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3048EC15-AD21-4316-93A7-0616330CF347}</ProjectGuid>
@@ -52,7 +52,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\third_party\jsoncpp-1.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\third_party\jsoncpp-1.4.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4018</DisableSpecificWarnings>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -71,7 +71,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\third_party\jsoncpp-1.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\third_party\jsoncpp-1.4.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4018</DisableSpecificWarnings>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
