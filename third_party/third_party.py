@@ -91,6 +91,12 @@ mongoose = {
   'failed':  (lambda num, path: failed(num, path))
 }
 
+websocketpp = {
+  'url': 'https://github.com/zaphoyd/websocketpp/archive/0.5.1.tar.gz',
+  'success': (lambda num, path: None),
+  'failed':  (lambda num, path: failed(num, path))
+}
+
 v8 = {
   'url': 'https://github.com/v8/v8-git-mirror/archive/4.3.5.tar.gz',
   'success': (lambda num, path: None),
@@ -108,8 +114,9 @@ threads = [
   ArchiveReadyThread(1, gmock),
   ArchiveReadyThread(2, jsoncpp),
   ArchiveReadyThread(3, mongoose),
-  ArchiveReadyThread(4, v8),
-  ArchiveReadyThread(5, cpp_netlib)
+  ArchiveReadyThread(4, websocketpp),
+  ArchiveReadyThread(5, v8),
+  ArchiveReadyThread(6, cpp_netlib)
 ]
 
 for thread in threads:
