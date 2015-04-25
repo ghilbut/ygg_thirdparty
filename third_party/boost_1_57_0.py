@@ -94,14 +94,17 @@ zlib = {
   'failed':  (lambda num, path: failed(num, path))
 }
 
-threads = [
-  ArchiveReadyThread(0, t7zip),
-  ArchiveReadyThread(1, boost),
-  ArchiveReadyThread(2, bzip2),
-  ArchiveReadyThread(3, icu4c),
-  ArchiveReadyThread(4, python27),
-  ArchiveReadyThread(5, zlib)
-]
+index = 0
+threads = []
+
+if is_win:
+  threads.append(ArchiveReadyThread(index, t7zip))
+  index += 1
+
+targets = [boost, bzip2, icu4c, python27, zlib]
+for target in targets:
+  threads.append(ArchiveReadyThread(index, target))
+  index += 1
 
 for thread in threads:
   thread.start()
@@ -113,7 +116,9 @@ for thread in threads:
 if is_win:
   os.chdir(rootpath)
   call(os.path.join(rootpath, 'boost_1_57_0.bat'), shell=True)
-
+else:
+  os.chdir(rootpath)
+  call(os.path.join(rootpath, 'boost_1_57_0.sh'), shell=True)
 
 import shutil
 shutil.rmtree(os.path.abspath(os.path.join(rootpath, 'tmp')))
