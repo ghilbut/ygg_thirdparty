@@ -1,0 +1,20 @@
+import os
+
+# set gmock include paths
+CPPPATH = [
+  '../third_party/gmock-1.7.0/gtest/include',
+  '../third_party/gmock-1.7.0/gtest',
+  '../third_party/gmock-1.7.0/include',
+  '../third_party/gmock-1.7.0']
+
+# set gmock source files
+sources = [
+  '../third_party/gmock-1.7.0/gtest/src/gtest-all.cc',
+  '../third_party/gmock-1.7.0/src/gmock-all.cc',
+  '../third_party/gmock-1.7.0/src/gmock_main.cc']
+
+
+# set build environment
+env = Environment(CPPPATH=CPPPATH)
+lib = env.StaticLibrary('gmock', sources)
+

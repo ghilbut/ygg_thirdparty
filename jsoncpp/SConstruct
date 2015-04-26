@@ -1,0 +1,22 @@
+import os
+
+
+this_sconscript_file = (lambda x:x).func_code.co_filename
+ROOTPATH = os.path.dirname(this_sconscript_file)
+
+
+CPPPATH = [
+  '../third_party/jsoncpp-1.4.4/include'
+]
+
+sources = [
+  '../third_party/jsoncpp-1.4.4/src/lib_json/json_reader.cpp',
+  '../third_party/jsoncpp-1.4.4/src/lib_json/json_value.cpp',
+  '../third_party/jsoncpp-1.4.4/src/lib_json/json_writer.cpp'
+]
+
+env = Environment(CPPPATH=CPPPATH)
+
+lib = env.StaticLibrary('jsoncpp', sources)
+#env.Install('../libs', lib)
+#env.Alias('install', '../libs')
