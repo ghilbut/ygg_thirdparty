@@ -1,4 +1,6 @@
 #!/bin/bash
+set -x # echo on
+
 kTmp="$(pwd)/tmp"
 
 # boost 1.57.0
@@ -10,7 +12,7 @@ export BZIP2_SOURCE="$kTmp/bzip2-1.0.6"
 
 # icu 54.1
 tar -xzf "$kTmp/icu4c-54_1-src.tgz" -C "$kTmp"
-export ICU_PATH="$kTmp/icu"
+#export ICU_PATH="$kTmp/icu"
 
 # python 2.7.9
 tar -xzf "$kTmp/Python-2.7.9.tgz" -C "$kTmp"
@@ -37,23 +39,15 @@ elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
 kPlatform="MinGW"
 fi
 
-chmod +x "configure" "install-sh" "runConfigureICU"
-./runConfigureICU "$kPlatform" --prefix="$kTmp" --enable-static
-make
-make install
+#chmod +x "configure" "install-sh" "runConfigureICU"
+#./runConfigureICU "$kPlatform" --prefix="$kTmp" --enable-static
+#make
+#make install
 popd
 
-
-# b2
-pushd "$kTmp/boost_1_57_0/tools/build"
+# compile
+pushd "$kTmp/boost_1_57_0"
 chmod +x bootstrap.sh
 ./bootstrap.sh
-./b2 install --prefix="../../../b2"
-popd
-export PATH=$PATH:$kTmp/b2/bin
-
-
-: compile
-pushd "$kTmp/boost_1_57_0"
-./b2 --prefix="$(pwd)/../../boost_1_57_0" --without-mpi toolset=clang cxxflags="-std=c++11 -stdlib=libc++" linkflags="-stdlib=libc++" variant=debug,release threading=multi link=static runtime-link=static address-model=64 install
+./b2 --prefix="$kTmp/../boost_1_57_0" --without-mpi toolset=clang cxxflags="-std=c++11 -stdlib=libc++" linkflags="-stdlib=libc++" variant=debug,release threading=multi link=static runtime-link=static address-model=64 --layout=tagged install
 popd
