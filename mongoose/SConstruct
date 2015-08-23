@@ -1,0 +1,20 @@
+import os
+
+
+this_sconscript_file = (lambda x:x).func_code.co_filename
+ROOTPATH = os.path.dirname(this_sconscript_file)
+
+
+CPPPATH = [
+  '../third_party/mongoose-5.5'
+]
+
+sources = [
+  '../third_party/mongoose-5.5/mongoose.c',
+]
+
+env = Environment(CPPPATH=CPPPATH)
+
+lib = env.StaticLibrary('mongoose', sources)
+#env.Install('../libs', lib)
+#env.Alias('install', '../libs')

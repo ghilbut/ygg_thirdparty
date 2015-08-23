@@ -3,3 +3,4 @@
 
 SConscript('gmock/SConstruct')
 SConscript('jsoncpp/SConstruct') 
+SConscript('mongoose/SConstruct') 

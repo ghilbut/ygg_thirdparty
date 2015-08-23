@@ -17,4 +17,3 @@ sources = [
 # set build environment
 env = Environment(CPPPATH=CPPPATH)
 lib = env.StaticLibrary('gmock', sources)
-
